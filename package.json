@@ -1,0 +1,28 @@
+{
+  "name": "hpgnodeapi",
+  "version": "1.0.0",
+  "description": "node+heroku+postgres+api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SESA566613/hpgnodeapi.git"
+  },
+  "author": "Shantanu Priyadarshi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SESA566613/hpgnodeapi/issues"
+  },
+  "homepage": "https://github.com/SESA566613/hpgnodeapi#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "engines":{
+    "node": "v12.18.3"
+  }
+}
