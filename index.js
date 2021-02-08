@@ -5,7 +5,7 @@ const app = express();
 const db = require('./queries');
 const port = process.env.PORT; 
 
-app.use(cors())
+//app.use(cors())
 app.use(bodyParser.json());
 app.use(
   bodyParser.urlencoded({
