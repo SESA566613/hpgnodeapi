@@ -9,7 +9,7 @@ const pool = new Pool({
   password: process.env.PASSWORD,
   port: process.env.PORT
   // connectionString: isProduction ? process.env.DATABASE_URL : connectionString,
-  // ssl: isProduction,
+   //ssl: true
 })
 const getUsers = (request, response) => {
   pool.query('SELECT * FROM users', (error, results) => {
