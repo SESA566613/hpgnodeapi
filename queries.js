@@ -1,4 +1,6 @@
 const Pool = require('pg').Pool
+
+
 //const isProduction = process.env.NODE_ENV === 'production'
 //const connectionString = `postgresql://${process.env.USER}:${process.env.PASSWORD}@${process.env.HOST}:${process.env.PORT}/${process.env.DATABASE}`
 require('dotenv').config();
@@ -7,12 +9,16 @@ const pool = new Pool({
   host: process.env.HOST,
   database: process.env.DATABASE,
   password: process.env.PASSWORD,
-  port: process.env.PORT
+  port: process.env.PORT,
+  //connectionString: process.env.DATABASE_URL,
   // connectionString: isProduction ? process.env.DATABASE_URL : connectionString,
    //ssl: true
+   ssl: {
+    rejectUnauthorized: false
+  }
 })
 const getUsers = (request, response) => {
-  pool.query('SELECT * FROM users', (error, results) => {
+  pool.query('SELECT * FROM public.users ORDER BY id ASC;', (error, results) => {
     if (error) {
       throw error
     }
